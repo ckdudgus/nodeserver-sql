@@ -6,7 +6,7 @@ export default function Get(){
 
     useEffect( async () => {
         const getdata = await axios.get('/getsend')
-        originUpdate(getdata)
+        originUpdate(getdata.data)
     } 
     , [] );
     

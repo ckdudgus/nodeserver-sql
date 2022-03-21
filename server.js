@@ -1,6 +1,5 @@
 var express = require('express');
-var app = express(); 
-
+var app = express();
 
 var postsend = require('./api/postsend')
 var getsend = require('./api/getsend')
@@ -16,7 +15,7 @@ app.get('/' , (req , res) => {
     res.send(' / 루트');
 })
 app.listen(app.get('port'), () => {
-    console.log(time +'콘솔확인')
+    console.log('콘솔확인')
 })
 
 

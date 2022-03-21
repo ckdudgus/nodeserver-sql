@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "server": "nodemon server.js",
     "react": "cd front && npm start",
-    "start": "concurrently --kill others-fail \"npm run server\" \"npm run react\""
+    "start": "concurrently --kill-others-on-fail \"npm run server\" \"npm run react\""
   },
   "repository": {
     "type": "git",
@@ -22,7 +22,6 @@
   "dependencies": {
     "concurrently": "^7.0.0",
     "express": "^4.17.3",
-    "mysql": "^2.18.1",
-    "nodemon": "^2.0.15"
+    "mysql": "^2.18.1"
   }
 }

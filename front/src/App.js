@@ -1,13 +1,13 @@
-import './App.css';
-import Post from './component/Post'
-import Get from './component/Get'
+
+import React from 'react';
+import Get from './component/Get';
 
 
 function App() {
   return (
-    <div className='App'>
+    <div >
       <Get></Get>
-      <Post></Post>
+    
     </div>
   );
 }
