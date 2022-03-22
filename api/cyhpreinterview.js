@@ -17,12 +17,31 @@ router.get('/' , (req , res , next) => {
     
 
     var botable = req.query.botable;
+    var crud = 'select'
     // ~~~~?botable=cyh_interview_new
+    // 리액트에서 주소요청
+    switch(botable){ // 워크밴치의 스키마.테이브
+        case "cyh_preinterview.cyh_interview_new":
+            crud = 'select';
+            break;
+        // case "cyh_preinterview.cyh_contact_new":
+        //     crud = 'insert into';
+        //     break;
+        // case "cyh_preinterview.cyh_portfolio_new":
+        //     crud = 'insert';
+        //     break;         
+        default:
+            botable = 'none';
+            crud = '';
+            break;    
+    }
 
-    if(botable == 'cyh_interview_new'){
+
+
+    if(botable !== 'none'){
         pool.getConnection(function(err , connection) {    
             connection.query(
-                'select * from cyh_preinterview.' +botable,
+                crud + ' * from ' +botable,
                 (error , result) => {
                     if(error) throw error;
                     console.log(result);
@@ -36,6 +55,8 @@ router.get('/' , (req , res , next) => {
         // next에 res를 출력하게 페이지분배
         next('route')
     }
+
 })
+
 
 module.exports = router;
