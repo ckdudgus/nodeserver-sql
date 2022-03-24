@@ -10,7 +10,7 @@ const Interview = (props) => {
                                             (result) => {  
                                                 try{  
                                                     interviewIdUpdate([...result.data]); 
-                                                    insertDB(result.data[0].key_id);                                                 
+                                                    insertDB(result.data[0].key);                                                 
                                                 }
                                                 catch(err){ console.log(err.message) }
                                             }
